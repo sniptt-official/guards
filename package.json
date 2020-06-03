@@ -1,0 +1,51 @@
+{
+  "name": "@hqoss/guards",
+  "version": "0.0.0",
+  "description": "A comprehensive collection of type guards for TypeScript and JavaScript",
+  "main": "./dist/index.js",
+  "typings": "./dist/index.d.ts",
+  "engines": {
+    "node": ">=12",
+    "npm": ">=6"
+  },
+  "scripts": {
+    "build": "rm -rf ./dist && tsc",
+    "format": "prettier --write \"./{src,test}/**/*.ts\"",
+    "format:check": "prettier --check \"./{src,test}/**/*.ts\"",
+    "test": "nyc ava",
+    "generate-docs": "rm -rf ./docs && typedoc --excludePrivate --excludeNotExported --plugin typedoc-plugin-markdown --out ./docs && rm ./docs/README.md",
+    "preversion": "npm run format:check && npm run build && npm test",
+    "prepublishOnly": "npm run format:check && npm run build && npm test",
+    "postversion": "git push --follow-tags"
+  },
+  "keywords": [
+    "type",
+    "guard",
+    "guards",
+    "typeguard",
+    "typeguards",
+    "javascript",
+    "js",
+    "typescript",
+    "node",
+    "node.js"
+  ],
+  "author": "Slavo Vojacek",
+  "license": "MIT",
+  "dependencies": {
+    "tslib": "^2.0.0"
+  },
+  "devDependencies": {
+    "ava": "^3.8.2",
+    "nyc": "^15.1.0",
+    "prettier": "2.0.5",
+    "ts-node": "^8.10.2",
+    "typedoc": "^0.17.7",
+    "typedoc-plugin-markdown": "^2.2.17",
+    "typescript": "^3.9.3"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:hqoss/guards.git"
+  }
+}
