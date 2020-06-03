@@ -1,3 +1,9 @@
+![Node.js CI](https://github.com/hqoss/guards/workflows/Node.js%20CI/badge.svg)
+[![Codacy Badge](https://app.codacy.com/project/badge/Grade/91944e21e00f485a94e1916e19d1e8b9)](https://www.codacy.com/gh/hqoss/guards?utm_source=github.com&utm_medium=referral&utm_content=hqoss/guards&utm_campaign=Badge_Grade)
+[![Codacy Badge](https://app.codacy.com/project/badge/Coverage/91944e21e00f485a94e1916e19d1e8b9)](https://www.codacy.com/gh/hqoss/guards?utm_source=github.com&utm_medium=referral&utm_content=hqoss/guards&utm_campaign=Badge_Coverage)
+[![GuardRails badge](https://badges.guardrails.io/hqoss/guards.svg?token=61bb319d41721f2d7f8be534c8d3a144a774359be2cdb40a74e67863e5c74042&provider=github)](https://dashboard.guardrails.io/gh/hqoss/41489)
+![npm](https://img.shields.io/npm/v/@hqoss/guards)
+
 # 🛡 Type Guards
 
 A comprehensive collection of type guards for TypeScript and JavaScript.
@@ -28,6 +34,15 @@ A comprehensive collection of type guards for TypeScript and JavaScript.
         -   [`isWeakMap`](#isweakmap)
         -   [`isWeakSet`](#isweakset)
         -   [`isDate`](#isdate)
+
+    -   [Convenience](#convenience)
+
+        -   [`isNonEmptyArray`](#isnonemptyarray)
+        -   [`isValidNumber`](#isvalidnumber)
+        -   [`isInteger`](#isinteger)
+        -   [`isPositiveInteger`](#ispositiveinteger)
+        -   [`isNonNegativeInteger`](#isnonnegativeinteger)
+        -   [`isNegativeInteger`](#isnegativeinteger)
 
     -   [API Docs](#api-docs)
 
@@ -189,6 +204,115 @@ Full TypeScript (type inference) support.
 #### `isDate`
 
 Answers `true` if and only if `(value instanceof Date) === true`.
+
+Full TypeScript (type inference) support.
+
+### Convenience
+
+#### `isNonEmptyArray`
+
+```typescript
+test("isNonEmptyArray", (t) => {
+  t.is(convenience.isNonEmptyArray([1, 2]), true);
+  t.is(convenience.isNonEmptyArray([1]), true);
+  t.is(convenience.isNonEmptyArray([]), false);
+});
+```
+
+Full TypeScript (type inference) support.
+
+#### `isValidNumber`
+
+```typescript
+test("isValidNumber", (t) => {
+  t.is(convenience.isValidNumber(0), true);
+  t.is(convenience.isValidNumber(42), true);
+  t.is(convenience.isValidNumber(-42), true);
+  t.is(convenience.isValidNumber(3.14), true);
+  t.is(convenience.isValidNumber(-3.14), true);
+  t.is(convenience.isValidNumber(Infinity), true);
+  t.is(convenience.isValidNumber(-Infinity), true);
+  t.is(convenience.isValidNumber(Number.MAX_SAFE_INTEGER), true);
+  t.is(convenience.isValidNumber(-Number.MAX_SAFE_INTEGER), true);
+  t.is(convenience.isValidNumber(NaN), false);
+});
+```
+
+Full TypeScript (type inference) support.
+
+#### `isInteger`
+
+```typescript
+test("isInteger", (t) => {
+  t.is(convenience.isInteger(0), true);
+  t.is(convenience.isInteger(42), true);
+  t.is(convenience.isInteger(-42), true);
+  t.is(convenience.isInteger(3.14), false);
+  t.is(convenience.isInteger(-3.14), false);
+  t.is(convenience.isInteger(Infinity), false);
+  t.is(convenience.isInteger(-Infinity), false);
+  t.is(convenience.isInteger(Number.MAX_SAFE_INTEGER), true);
+  t.is(convenience.isInteger(-Number.MAX_SAFE_INTEGER), true);
+  t.is(convenience.isInteger(NaN), false);
+});
+```
+
+Full TypeScript (type inference) support.
+
+#### `isPositiveInteger`
+
+```typescript
+test("isPositiveInteger", (t) => {
+  t.is(convenience.isPositiveInteger(0), false);
+  t.is(convenience.isPositiveInteger(42), true);
+  t.is(convenience.isPositiveInteger(-42), false);
+  t.is(convenience.isPositiveInteger(3.14), false);
+  t.is(convenience.isPositiveInteger(-3.14), false);
+  t.is(convenience.isPositiveInteger(Infinity), false);
+  t.is(convenience.isPositiveInteger(-Infinity), false);
+  t.is(convenience.isPositiveInteger(Number.MAX_SAFE_INTEGER), true);
+  t.is(convenience.isPositiveInteger(-Number.MAX_SAFE_INTEGER), false);
+  t.is(convenience.isPositiveInteger(NaN), false);
+});
+```
+
+Full TypeScript (type inference) support.
+
+#### `isNonNegativeInteger`
+
+```typescript
+test("isNonNegativeInteger", (t) => {
+  t.is(convenience.isNonNegativeInteger(0), true);
+  t.is(convenience.isNonNegativeInteger(42), true);
+  t.is(convenience.isNonNegativeInteger(-42), false);
+  t.is(convenience.isNonNegativeInteger(3.14), false);
+  t.is(convenience.isNonNegativeInteger(-3.14), false);
+  t.is(convenience.isNonNegativeInteger(Infinity), false);
+  t.is(convenience.isNonNegativeInteger(-Infinity), false);
+  t.is(convenience.isNonNegativeInteger(Number.MAX_SAFE_INTEGER), true);
+  t.is(convenience.isNonNegativeInteger(-Number.MAX_SAFE_INTEGER), false);
+  t.is(convenience.isNonNegativeInteger(NaN), false);
+});
+```
+
+Full TypeScript (type inference) support.
+
+#### `isNegativeInteger`
+
+```typescript
+test("isNegativeInteger", (t) => {
+  t.is(convenience.isNegativeInteger(0), false);
+  t.is(convenience.isNegativeInteger(42), false);
+  t.is(convenience.isNegativeInteger(-42), true);
+  t.is(convenience.isNegativeInteger(3.14), false);
+  t.is(convenience.isNegativeInteger(-3.14), false);
+  t.is(convenience.isNegativeInteger(Infinity), false);
+  t.is(convenience.isNegativeInteger(-Infinity), false);
+  t.is(convenience.isNegativeInteger(Number.MAX_SAFE_INTEGER), false);
+  t.is(convenience.isNegativeInteger(-Number.MAX_SAFE_INTEGER), true);
+  t.is(convenience.isNegativeInteger(NaN), false);
+});
+```
 
 Full TypeScript (type inference) support.
 
