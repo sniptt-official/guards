@@ -8,6 +8,8 @@
 
 A comprehensive collection of type guards for TypeScript and JavaScript.
 
+![Type safety for chained ops](./assets/type-safety-chained-operations.png)
+
 ## Table of contents
 
 -   [⏳ Install](#-install)
