@@ -8,6 +8,8 @@
 
 A comprehensive collection of type guards for TypeScript and JavaScript.
 
+Inspired by [Elixir/Erlang Guards](https://hexdocs.pm/elixir/guards.html).
+
 ![Type safety for chained ops](./assets/type-safety-chained-operations.png)
 
 ## Table of contents
