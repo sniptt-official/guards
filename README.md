@@ -6,7 +6,7 @@
 
 # 🛡 Type Guards
 
-A comprehensive collection of type guards for TypeScript and JavaScript.
+A comprehensive, platform-agnostic collection of type guards for TypeScript and JavaScript.
 
 Inspired by [Elixir/Erlang Guards](https://hexdocs.pm/elixir/guards.html).
 
@@ -89,7 +89,7 @@ The latest ECMAScript standard defines nine types:
 
 #### `isBigInt`
 
-⚠️ Currently not exposed because `BigInt` support requires targeting ES2020.
+⚠️ NOTE: Currently not exposed because `BigInt` support requires targeting ES2020.
 
 #### `isBoolean`
 
@@ -104,6 +104,13 @@ if (isBoolean(val)) {
 ```
 
 #### `isNumber`
+
+⚠️ NOTE: Also answers `true` to `NaN`!
+
+See also:
+
+-   [isValidNumber](#isvalidnumber)
+-   [isInteger](#isinteger)
 
 ```typescript
 let val: number | string
@@ -166,6 +173,8 @@ Answers `true` if and only if `typeof value === "function"`.
 Full TypeScript (type inference) support.
 
 #### `isObject`
+
+⚠️ NOTE: This is a _strict_ check, see details below.
 
 Answers `true` if and only if:
 

@@ -1,7 +1,7 @@
 {
   "name": "@hqoss/guards",
   "version": "0.0.2",
-  "description": "A comprehensive collection of type guards for TypeScript and JavaScript",
+  "description": "A comprehensive, platform-agnostic collection of type guards for TypeScript and JavaScript",
   "main": "./dist/index.js",
   "typings": "./dist/index.d.ts",
   "engines": {
