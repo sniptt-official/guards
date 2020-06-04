@@ -89,7 +89,7 @@ The latest ECMAScript standard defines nine types:
 
 #### `isBigInt`
 
-⚠️ NOTE: Currently not exposed because `BigInt` support requires targeting ES2020.
+**⚠️ NOTE:** Currently not exposed because `BigInt` support requires targeting ES2020.
 
 #### `isBoolean`
 
@@ -105,7 +105,7 @@ if (isBoolean(val)) {
 
 #### `isNumber`
 
-⚠️ NOTE: Also answers `true` to `NaN`!
+**⚠️ NOTE:** Also answers `true` to `NaN`!
 
 See also:
 
@@ -174,7 +174,7 @@ Full TypeScript (type inference) support.
 
 #### `isObject`
 
-⚠️ NOTE: This is a _strict_ check, see details below.
+**⚠️ NOTE:** This is a _strict_ check, see details below.
 
 Answers `true` if and only if:
 
