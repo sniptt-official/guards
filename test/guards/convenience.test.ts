@@ -8,6 +8,11 @@ test("isNonEmptyArray", (t) => {
   t.is(convenience.isNonEmptyArray([]), false);
 });
 
+test("isNonEmptyString", (t) => {
+  t.is(convenience.isNonEmptyString("a"), true);
+  t.is(convenience.isNonEmptyString(""), false);
+});
+
 test("isValidNumber", (t) => {
   t.is(convenience.isValidNumber(0), true);
   t.is(convenience.isValidNumber(42), true);

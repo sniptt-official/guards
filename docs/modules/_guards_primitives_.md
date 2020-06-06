@@ -18,7 +18,7 @@
 
 ▸ **isBoolean**‹**U**›(`term`: boolean | U): *term is boolean*
 
-*Defined in [guards/primitives.ts:7](https://github.com/hqoss/guards/blob/d6aeb0e/src/guards/primitives.ts#L7)*
+*Defined in [guards/primitives.ts:7](https://github.com/hqoss/guards/blob/6f679f8/src/guards/primitives.ts#L7)*
 
 **Type parameters:**
 
@@ -38,7 +38,7 @@ ___
 
 ▸ **isNumber**‹**U**›(`term`: number | U): *term is number*
 
-*Defined in [guards/primitives.ts:11](https://github.com/hqoss/guards/blob/d6aeb0e/src/guards/primitives.ts#L11)*
+*Defined in [guards/primitives.ts:11](https://github.com/hqoss/guards/blob/6f679f8/src/guards/primitives.ts#L11)*
 
 **Type parameters:**
 
@@ -58,7 +58,7 @@ ___
 
 ▸ **isString**‹**U**›(`term`: string | U): *term is string*
 
-*Defined in [guards/primitives.ts:15](https://github.com/hqoss/guards/blob/d6aeb0e/src/guards/primitives.ts#L15)*
+*Defined in [guards/primitives.ts:15](https://github.com/hqoss/guards/blob/6f679f8/src/guards/primitives.ts#L15)*
 
 **Type parameters:**
 
@@ -78,7 +78,7 @@ ___
 
 ▸ **isSymbol**‹**U**›(`term`: symbol | U): *term is symbol*
 
-*Defined in [guards/primitives.ts:23](https://github.com/hqoss/guards/blob/d6aeb0e/src/guards/primitives.ts#L23)*
+*Defined in [guards/primitives.ts:23](https://github.com/hqoss/guards/blob/6f679f8/src/guards/primitives.ts#L23)*
 
 **Type parameters:**
 
@@ -98,7 +98,7 @@ ___
 
 ▸ **isUndefined**‹**T**›(`term`: T | undefined): *term is undefined*
 
-*Defined in [guards/primitives.ts:3](https://github.com/hqoss/guards/blob/d6aeb0e/src/guards/primitives.ts#L3)*
+*Defined in [guards/primitives.ts:3](https://github.com/hqoss/guards/blob/6f679f8/src/guards/primitives.ts#L3)*
 
 **Type parameters:**
 

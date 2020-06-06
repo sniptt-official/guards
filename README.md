@@ -42,6 +42,7 @@ Inspired by [Elixir/Erlang Guards](https://hexdocs.pm/elixir/guards.html).
     -   [Convenience](#convenience)
 
         -   [`isNonEmptyArray`](#isnonemptyarray)
+        -   [`isNonEmptyString`](#isnonemptystring)
         -   [`isValidNumber`](#isvalidnumber)
         -   [`isInteger`](#isinteger)
         -   [`isPositiveInteger`](#ispositiveinteger)
@@ -240,6 +241,17 @@ test("isNonEmptyArray", (t) => {
   t.is(convenience.isNonEmptyArray([1, 2]), true);
   t.is(convenience.isNonEmptyArray([1]), true);
   t.is(convenience.isNonEmptyArray([]), false);
+});
+```
+
+Full TypeScript (type inference) support.
+
+#### `isNonEmptyString`
+
+```typescript
+test("isNonEmptyString", (t) => {
+  t.is(convenience.isNonEmptyString("a"), true);
+  t.is(convenience.isNonEmptyString(""), false);
 });
 ```
 

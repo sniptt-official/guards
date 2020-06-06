@@ -22,7 +22,7 @@
 
 ▸ **isArray**‹**T**, **U**›(`term`: Array‹T› | U): *term is Array<T>*
 
-*Defined in [guards/special.ts:17](https://github.com/hqoss/guards/blob/d6aeb0e/src/guards/special.ts#L17)*
+*Defined in [guards/special.ts:17](https://github.com/hqoss/guards/blob/6f679f8/src/guards/special.ts#L17)*
 
 **Type parameters:**
 
@@ -44,7 +44,7 @@ ___
 
 ▸ **isDate**‹**U**›(`term`: Date | U): *term is Date*
 
-*Defined in [guards/special.ts:41](https://github.com/hqoss/guards/blob/d6aeb0e/src/guards/special.ts#L41)*
+*Defined in [guards/special.ts:41](https://github.com/hqoss/guards/blob/6f679f8/src/guards/special.ts#L41)*
 
 **Type parameters:**
 
@@ -64,7 +64,7 @@ ___
 
 ▸ **isFunction**‹**T**, **U**›(`term`: T | U): *term is T*
 
-*Defined in [guards/special.ts:7](https://github.com/hqoss/guards/blob/d6aeb0e/src/guards/special.ts#L7)*
+*Defined in [guards/special.ts:7](https://github.com/hqoss/guards/blob/6f679f8/src/guards/special.ts#L7)*
 
 **Type parameters:**
 
@@ -86,7 +86,7 @@ ___
 
 ▸ **isMap**‹**K**, **V**, **U**›(`term`: Map‹K, V› | U): *term is Map<K, V>*
 
-*Defined in [guards/special.ts:21](https://github.com/hqoss/guards/blob/d6aeb0e/src/guards/special.ts#L21)*
+*Defined in [guards/special.ts:21](https://github.com/hqoss/guards/blob/6f679f8/src/guards/special.ts#L21)*
 
 **Type parameters:**
 
@@ -110,7 +110,7 @@ ___
 
 ▸ **isNull**‹**T**›(`term`: T | null): *term is null*
 
-*Defined in [guards/special.ts:3](https://github.com/hqoss/guards/blob/d6aeb0e/src/guards/special.ts#L3)*
+*Defined in [guards/special.ts:3](https://github.com/hqoss/guards/blob/6f679f8/src/guards/special.ts#L3)*
 
 **Type parameters:**
 
@@ -130,7 +130,7 @@ ___
 
 ▸ **isObject**‹**T**, **U**›(`term`: T | U): *term is NonNullable<T>*
 
-*Defined in [guards/special.ts:11](https://github.com/hqoss/guards/blob/d6aeb0e/src/guards/special.ts#L11)*
+*Defined in [guards/special.ts:11](https://github.com/hqoss/guards/blob/6f679f8/src/guards/special.ts#L11)*
 
 **Type parameters:**
 
@@ -152,7 +152,7 @@ ___
 
 ▸ **isSet**‹**T**, **U**›(`term`: Set‹T› | U): *term is Set<T>*
 
-*Defined in [guards/special.ts:25](https://github.com/hqoss/guards/blob/d6aeb0e/src/guards/special.ts#L25)*
+*Defined in [guards/special.ts:25](https://github.com/hqoss/guards/blob/6f679f8/src/guards/special.ts#L25)*
 
 **Type parameters:**
 
@@ -174,7 +174,7 @@ ___
 
 ▸ **isWeakMap**‹**K**, **V**, **U**›(`term`: WeakMap‹K, V› | U): *term is WeakMap<K, V>*
 
-*Defined in [guards/special.ts:29](https://github.com/hqoss/guards/blob/d6aeb0e/src/guards/special.ts#L29)*
+*Defined in [guards/special.ts:29](https://github.com/hqoss/guards/blob/6f679f8/src/guards/special.ts#L29)*
 
 **Type parameters:**
 
@@ -198,7 +198,7 @@ ___
 
 ▸ **isWeakSet**‹**T**, **U**›(`term`: WeakSet‹T› | U): *term is WeakSet<T>*
 
-*Defined in [guards/special.ts:35](https://github.com/hqoss/guards/blob/d6aeb0e/src/guards/special.ts#L35)*
+*Defined in [guards/special.ts:35](https://github.com/hqoss/guards/blob/6f679f8/src/guards/special.ts#L35)*
 
 **Type parameters:**
 
