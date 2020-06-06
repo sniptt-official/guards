@@ -179,8 +179,7 @@ Full TypeScript (type inference) support.
 Answers `true` if and only if:
 
 -   `isNull(value) === false`; and
--   `typeof value === "object"`; and
--   `Array.isArray(value) === false`
+-   `typeof value === "object"`
 
 Full TypeScript (type inference) support.
 

@@ -51,7 +51,7 @@ test("isObject", (t) => {
   t.is(special.isObject(undefined), false);
   t.is(special.isObject("str"), false);
   t.is(special.isObject(42), false);
-  t.is(special.isObject([]), false);
+  t.is(special.isObject([]), true);
   t.is(special.isObject(Symbol("symbol")), false);
 });
 
