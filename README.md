@@ -181,6 +181,18 @@ Answers `true` if and only if:
 -   `isNull(value) === false`; and
 -   `typeof value === "object"`
 
+To check for "plain" object (excluding array):
+
+```typescript
+isObject(term) && !isArray(term)
+```
+
+To check for array:
+
+```typescript
+isArray(term)
+```
+
 Full TypeScript (type inference) support.
 
 #### `isArray`
