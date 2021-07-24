@@ -12,10 +12,7 @@
     "build"
   ],
   "keywords": [
-    "monads",
-    "option",
-    "result",
-    "either",
+    "guards",
     "javascript",
     "js",
     "typescript",
