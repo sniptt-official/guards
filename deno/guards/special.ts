@@ -5,13 +5,13 @@ export const isNull = <T>(term: T | null): term is null => {
 };
 
 export const isFunction = <T extends Function, U>(term: T | U): term is T => {
-  return typeof term === "function";
+  return typeof term === 'function';
 };
 
 export const isObject = <T extends object, U>(
   term: T | U,
 ): term is NonNullable<T> => {
-  return !isNull(term) && typeof term === "object";
+  return !isNull(term) && typeof term === 'object';
 };
 
 export const isArray = <T, U>(term: Array<T> | U): term is Array<T> => {

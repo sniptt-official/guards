@@ -1,6 +1,6 @@
-import test from "ava";
+import test from 'ava';
 
-import * as primitives from "../../src/guards/primitives";
+import * as primitives from '../../lib/guards/primitives';
 
 const getUndefined = () => {
   return undefined;
@@ -13,13 +13,13 @@ const getBoolean = () => {
 };
 
 const getNumber = () => {
-  const values = [42, 3.14, Infinity, NaN, Number("42")];
+  const values = [42, 3.14, Infinity, NaN, Number('42')];
   const index = Math.floor(Math.random() * values.length);
   return values[index];
 };
 
 const getString = () => {
-  const values = ["str", String(42)];
+  const values = ['str', String(42)];
   const index = Math.floor(Math.random() * values.length);
   return values[index];
 };
@@ -31,10 +31,10 @@ const getString = () => {
 // }
 
 const getSymbol = () => {
-  return Symbol("symbol");
+  return Symbol('symbol');
 };
 
-test("isUndefined", (t) => {
+test('isUndefined', (t) => {
   t.is(primitives.isUndefined(getUndefined()), true);
   t.is(primitives.isUndefined(getBoolean()), false);
   t.is(primitives.isUndefined(getNumber()), false);
@@ -43,7 +43,7 @@ test("isUndefined", (t) => {
   t.is(primitives.isUndefined(getSymbol()), false);
 });
 
-test("isBoolean", (t) => {
+test('isBoolean', (t) => {
   t.is(primitives.isBoolean(getUndefined()), false);
   t.is(primitives.isBoolean(getBoolean()), true);
   t.is(primitives.isBoolean(getNumber()), false);
@@ -52,7 +52,7 @@ test("isBoolean", (t) => {
   t.is(primitives.isBoolean(getSymbol()), false);
 });
 
-test("isNumber", (t) => {
+test('isNumber', (t) => {
   t.is(primitives.isNumber(getUndefined()), false);
   t.is(primitives.isNumber(getBoolean()), false);
   t.is(primitives.isNumber(getNumber()), true);
@@ -61,7 +61,7 @@ test("isNumber", (t) => {
   t.is(primitives.isNumber(getSymbol()), false);
 });
 
-test("isString", (t) => {
+test('isString', (t) => {
   t.is(primitives.isString(getUndefined()), false);
   t.is(primitives.isString(getBoolean()), false);
   t.is(primitives.isString(getNumber()), false);
@@ -79,7 +79,7 @@ test("isString", (t) => {
 // t.is(primitives.isBigInt(getSymbol()), false)
 // })
 
-test("isSymbol", (t) => {
+test('isSymbol', (t) => {
   t.is(primitives.isSymbol(getUndefined()), false);
   t.is(primitives.isSymbol(getBoolean()), false);
   t.is(primitives.isSymbol(getNumber()), false);

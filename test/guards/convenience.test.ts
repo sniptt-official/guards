@@ -1,19 +1,19 @@
-import test from "ava";
+import test from 'ava';
 
-import * as convenience from "../../src/guards/convenience";
+import * as convenience from '../../lib/guards/convenience';
 
-test("isNonEmptyArray", (t) => {
+test('isNonEmptyArray', (t) => {
   t.is(convenience.isNonEmptyArray([1, 2]), true);
   t.is(convenience.isNonEmptyArray([1]), true);
   t.is(convenience.isNonEmptyArray([]), false);
 });
 
-test("isNonEmptyString", (t) => {
-  t.is(convenience.isNonEmptyString("a"), true);
-  t.is(convenience.isNonEmptyString(""), false);
+test('isNonEmptyString', (t) => {
+  t.is(convenience.isNonEmptyString('a'), true);
+  t.is(convenience.isNonEmptyString(''), false);
 });
 
-test("isValidNumber", (t) => {
+test('isValidNumber', (t) => {
   t.is(convenience.isValidNumber(0), true);
   t.is(convenience.isValidNumber(42), true);
   t.is(convenience.isValidNumber(-42), true);
@@ -26,7 +26,7 @@ test("isValidNumber", (t) => {
   t.is(convenience.isValidNumber(NaN), false);
 });
 
-test("isInteger", (t) => {
+test('isInteger', (t) => {
   t.is(convenience.isInteger(0), true);
   t.is(convenience.isInteger(42), true);
   t.is(convenience.isInteger(-42), true);
@@ -39,7 +39,7 @@ test("isInteger", (t) => {
   t.is(convenience.isInteger(NaN), false);
 });
 
-test("isPositiveInteger", (t) => {
+test('isPositiveInteger', (t) => {
   t.is(convenience.isPositiveInteger(0), false);
   t.is(convenience.isPositiveInteger(42), true);
   t.is(convenience.isPositiveInteger(-42), false);
@@ -52,7 +52,7 @@ test("isPositiveInteger", (t) => {
   t.is(convenience.isPositiveInteger(NaN), false);
 });
 
-test("isNonNegativeInteger", (t) => {
+test('isNonNegativeInteger', (t) => {
   t.is(convenience.isNonNegativeInteger(0), true);
   t.is(convenience.isNonNegativeInteger(42), true);
   t.is(convenience.isNonNegativeInteger(-42), false);
@@ -65,7 +65,7 @@ test("isNonNegativeInteger", (t) => {
   t.is(convenience.isNonNegativeInteger(NaN), false);
 });
 
-test("isNegativeInteger", (t) => {
+test('isNegativeInteger', (t) => {
   t.is(convenience.isNegativeInteger(0), false);
   t.is(convenience.isNegativeInteger(42), false);
   t.is(convenience.isNegativeInteger(-42), true);

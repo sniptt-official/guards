@@ -1,52 +1,57 @@
 {
-  "name": "@hqoss/guards",
+  "name": "@sniptt/guards",
   "version": "0.1.0",
-  "description": "A comprehensive, platform-agnostic collection of type guards for TypeScript and JavaScript",
-  "main": "./dist/index.js",
-  "typings": "./dist/index.d.ts",
+  "description": "Comprehensive collection of type guards for JavaScript and TypeScript; Inspired by Elixir",
+  "main": "build/index.js",
+  "types": "build",
   "engines": {
     "node": ">=14",
-    "npm": ">=6"
+    "npm": ">=7"
   },
-  "scripts": {
-    "build": "rm -rf ./dist && tsc",
-    "format": "prettier --write \"./{src,test}/**/*.ts\"",
-    "format:check": "prettier --check \"./{src,test}/**/*.ts\"",
-    "test": "nyc --reporter=clover --reporter=json --reporter=lcov ava",
-    "generate-docs": "rm -rf ./docs && typedoc --excludePrivate --excludeNotExported --plugin typedoc-plugin-markdown --out ./docs && rm ./docs/README.md",
-    "preversion": "npm run format:check && npm run build && npm test",
-    "prepublishOnly": "npm run format:check && npm run build && npm test",
-    "postversion": "git push --follow-tags"
-  },
+  "files": [
+    "build"
+  ],
   "keywords": [
-    "type",
-    "guard",
-    "guards",
-    "typeguard",
-    "typeguards",
+    "monads",
+    "option",
+    "result",
+    "either",
     "javascript",
     "js",
     "typescript",
     "node",
     "node.js"
   ],
-  "author": "Slavo Vojacek",
+  "author": "Sniptt <support@sniptt.com> (sniptt.com)",
   "license": "MIT",
-  "dependencies": {
-    "tslib": "^2.0.0"
+  "homepage": "https://github.com/sniptt-official/guards",
+  "bugs": "https://github.com/sniptt-official/guards/issues",
+  "scripts": {
+    "build": "rm -rf build deno && tsc && denoify && mv deno_build deno && npm run format",
+    "format": "prettier --loglevel warn --write \"**/*.{ts,js,json,yaml}\"",
+    "format:check": "prettier --loglevel warn --check \"**/*.{ts,js,json,yaml}\"",
+    "test": "nyc ava --fail-fast ./test/**/*.test.ts",
+    "docs": "rm -rf ./docs && typedoc lib/index.ts --excludePrivate --excludeProtected --plugin typedoc-plugin-markdown --readme none --out ./docs",
+    "preversion": "npm run format:check && npm run build && npm test",
+    "postversion": "git push --follow-tags"
   },
   "devDependencies": {
-    "@types/node": "15.12.1",
     "ava": "3.15.0",
-    "nyc": "^15.1.0",
-    "prettier": "2.3.1",
-    "ts-node": "10.0.0",
-    "typedoc": "0.20.36",
-    "typedoc-plugin-markdown": "3.9.0",
-    "typescript": "4.3.2"
+    "denoify": "0.7.2",
+    "nyc": "15.1.0",
+    "prettier": "2.3.2",
+    "ts-node": "10.1.0",
+    "typedoc": "0.21.4",
+    "typedoc-plugin-markdown": "3.10.4",
+    "typescript": "4.3.5"
   },
-  "repository": {
-    "type": "git",
-    "url": "git@github.com:hqoss/guards.git"
+  "ava": {
+    "extensions": [
+      "ts"
+    ],
+    "require": [
+      "ts-node/register"
+    ],
+    "verbose": true
   }
 }
