@@ -16,9 +16,11 @@
   Inspired by <a href="https://hexdocs.pm/elixir/guards.html" target="_blank">Elixir guards</a>
 </p>
 
-***
+<p align="center">
+  0 dependencies 💪🏽
+</p>
 
-<!-- ![Type safety for chained ops](./assets/type-safety-chained-operations.png) -->
+***
 
 ## Install
 
@@ -56,6 +58,10 @@ The latest ECMAScript standard defines nine types:
     *   `null`: `typeof instance === "object"`. Special primitive type having additional usage for it's value: if object is not inherited, then `null` is shown;
 
 Source: <https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures>
+
+### Correct type coercion
+
+![Type safety for chained ops](.github/assets/type-safety-chained-operations.png)
 
 ### Primitives
 
