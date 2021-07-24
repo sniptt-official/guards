@@ -1,6 +1,6 @@
 {
   "name": "@sniptt/guards",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Comprehensive collection of type guards for JavaScript and TypeScript; Inspired by Elixir",
   "main": "build/index.js",
   "types": "build",
