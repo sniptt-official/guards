@@ -36,33 +36,65 @@ import { ... } from 'https://deno.land/x/guards/mod.ts'
 // TODO
 ```
 
-## 📝 Usage
+## Usage
 
-From <https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures>:
+### Foreword on JavaScript data types and data structures
 
 The latest ECMAScript standard defines nine types:
 
--   Six **Data Types** that are primitives, checked by `typeof` operator:
-    -   `undefined`: `typeof instance === "undefined"`
-    -   `Boolean`: `typeof instance === "boolean"`
-    -   `Number`: `typeof instance === "number"`
-    -   `String`: `typeof instance === "string"`
-    -   `BigInt`: `typeof instance === "bigint"`
-    -   `Symbol`: `typeof instance === "symbol"`
-- **Structural Types**:
-    -   `Object`: `typeof instance === "object"`. Special non-data but structural type for any constructed object instance also used as data structures: new `Object`, new `Array`, new `Map`, new `Set`, new `WeakMap`, new `WeakSet`, new `Date` and almost everything made with `new` keyword;
-    -   `Function` non data structure, though it also answers for `typeof` operator: `typeof instance === "function"`. This answer is done as a special shorthand for `Function`s, though every `Function` constructor is derived from `Object` constructor.
-- **Structural Root** Primitive
-    -   `null`: `typeof instance === "object"`. Special primitive type having additional usage for it's value: if object is not inherited, then `null` is shown;
+*   Six **Data Types** that are primitives, checked by `typeof` operator:
+    *   `undefined`: `typeof instance === "undefined"`
+    *   `Boolean`: `typeof instance === "boolean"`
+    *   `Number`: `typeof instance === "number"`
+    *   `String`: `typeof instance === "string"`
+    *   `BigInt`: `typeof instance === "bigint"`
+    *   `Symbol`: `typeof instance === "symbol"`
+*   **Structural Types**:
+    *   `Object`: `typeof instance === "object"`. Special non-data but structural type for any constructed object instance also used as data structures: new `Object`, new `Array`, new `Map`, new `Set`, new `WeakMap`, new `WeakSet`, new `Date` and almost everything made with `new` keyword;
+    *   `Function` non data structure, though it also answers for `typeof` operator: `typeof instance === "function"`. This answer is done as a special shorthand for `Function`s, though every `Function` constructor is derived from `Object` constructor.
+*   **Structural Root** Primitive
+    *   `null`: `typeof instance === "object"`. Special primitive type having additional usage for it's value: if object is not inherited, then `null` is shown;
+
+Source: <https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures>
 
 ### Primitives
 
+Sample usage:
+
+```typescript
+import { primitives } from '@sniptt/guards';
+
+primitives.isNumber(val);
+```
+
+or
+
+```typescript
+import { isNumber } from '@sniptt/guards/primitives';
+
+isNumber(val);
+```
+
 #### `isBigInt`
+
+```typescript
+import { isBigInt } from '@sniptt/guards/primitives';
+
+let val: bigint | number;
+
+if (isBigInt(val)) {
+  // TypeScript will infer val: bigint
+} else {
+  // TypeScript will infer val: number
+}
+```
 
 #### `isBoolean`
 
 ```typescript
-let val: boolean | number
+import { isBoolean } from '@sniptt/guards/primitives';
+
+let val: boolean | number;
 
 if (isBoolean(val)) {
   // TypeScript will infer val: boolean
@@ -73,15 +105,18 @@ if (isBoolean(val)) {
 
 #### `isNumber`
 
-**⚠️ NOTE:** Also answers `true` to `NaN`!
+Answers `false` to `NaN`!
 
 See also:
 
--   [isValidNumber](#isvalidnumber)
--   [isInteger](#isinteger)
+*   [isNumberOrNaN](#isnumberornan)
+*   [isInteger](#isinteger)
+*   [isBigInt](#isbigint)
 
 ```typescript
-let val: number | string
+import { isNumber } from '@sniptt/guards/primitives';
+
+let val: number | string;
 
 if (isNumber(val)) {
   // TypeScript will infer val: number
@@ -93,7 +128,9 @@ if (isNumber(val)) {
 #### `isString`
 
 ```typescript
-let val: string | number
+import { isString } from '@sniptt/guards/primitives';
+
+let val: string | number;
 
 if (isString(val)) {
   // TypeScript will infer val: string
@@ -105,7 +142,9 @@ if (isString(val)) {
 #### `isSymbol`
 
 ```typescript
-let val: symbol | string
+import { isSymbol } from '@sniptt/guards/primitives';
+
+let val: symbol | string;
 
 if (isSymbol(val)) {
   // TypeScript will infer val: symbol
@@ -117,7 +156,9 @@ if (isSymbol(val)) {
 #### `isUndefined`
 
 ```typescript
-let val: undefined | null
+import { isUndefined } from '@sniptt/guards/primitives';
+
+let val: undefined | null;
 
 if (isUndefined(val)) {
   // TypeScript will infer val: undefined
@@ -126,34 +167,35 @@ if (isUndefined(val)) {
 }
 ```
 
-### Special
+### Structural
+
+Sample usage:
+
+```typescript
+import { structural } from '@sniptt/guards';
+
+structural.isMap(val);
+```
+
+or
+
+```typescript
+import { isMap } from '@sniptt/guards/structural';
+
+isMap(val);
+```
 
 #### `isNull`
 
 Answers `true` if and only if `value === null`.
 
-Full TypeScript (type inference) support.
-
 #### `isFunction`
 
 Answers `true` if and only if `typeof value === "function"`.
 
-Full TypeScript (type inference) support.
-
 #### `isObject`
 
-**⚠️ NOTE:** This is a _strict_ check, see details below.
-
-Answers `true` if and only if:
-
--   `isNull(value) === false`; and
--   `typeof value === "object"`
-
-To check for "plain" object (excluding array):
-
-```typescript
-isObject(term) && !isArray(term)
-```
+Answers `true` to `null`!
 
 To check for array:
 
@@ -161,45 +203,63 @@ To check for array:
 isArray(term)
 ```
 
-Full TypeScript (type inference) support.
+To check for object *or* null:
+
+```typescript
+isObjectOrNull(term)
+```
 
 #### `isArray`
 
 Answers `true` if and only if `Array.isArray(value) === true`.
 
-Full TypeScript (type inference) support.
-
 #### `isMap`
 
 Answers `true` if and only if `(value instanceof Map) === true`.
-
-Full TypeScript (type inference) support.
 
 #### `isSet`
 
 Answers `true` if and only if `(value instanceof Set) === true`.
 
-Full TypeScript (type inference) support.
-
 #### `isWeakMap`
 
 Answers `true` if and only if `(value instanceof WeakMap) === true`.
-
-Full TypeScript (type inference) support.
 
 #### `isWeakSet`
 
 Answers `true` if and only if `(value instanceof WeakSet) === true`.
 
-Full TypeScript (type inference) support.
-
 #### `isDate`
 
 Answers `true` if and only if `(value instanceof Date) === true`.
 
-Full TypeScript (type inference) support.
-
 ### Convenience
+
+Sample usage:
+
+```typescript
+import { convenience } from '@sniptt/guards';
+
+convenience.isNonEmptyArray(val);
+```
+
+or
+
+```typescript
+import { isNonEmptyArray } from '@sniptt/guards/convenience';
+
+isNonEmptyArray(val);
+```
+
+#### `isObjectOrNull`
+
+```typescript
+test("isObjectOrNull", (t) => {
+  t.is(convenience.isObjectOrNull({}), true);
+  t.is(convenience.isObjectOrNull(null), true);
+  t.is(convenience.isObjectOrNull(new Set()), true);
+});
+```
 
 #### `isNonEmptyArray`
 
@@ -211,8 +271,6 @@ test("isNonEmptyArray", (t) => {
 });
 ```
 
-Full TypeScript (type inference) support.
-
 #### `isNonEmptyString`
 
 ```typescript
@@ -222,26 +280,23 @@ test("isNonEmptyString", (t) => {
 });
 ```
 
-Full TypeScript (type inference) support.
-
-#### `isValidNumber`
+#### `isNumberOrNan`
 
 ```typescript
-test("isValidNumber", (t) => {
-  t.is(convenience.isValidNumber(0), true);
-  t.is(convenience.isValidNumber(42), true);
-  t.is(convenience.isValidNumber(-42), true);
-  t.is(convenience.isValidNumber(3.14), true);
-  t.is(convenience.isValidNumber(-3.14), true);
-  t.is(convenience.isValidNumber(Infinity), true);
-  t.is(convenience.isValidNumber(-Infinity), true);
-  t.is(convenience.isValidNumber(Number.MAX_SAFE_INTEGER), true);
-  t.is(convenience.isValidNumber(-Number.MAX_SAFE_INTEGER), true);
-  t.is(convenience.isValidNumber(NaN), false);
+test("isNumberOrNan", (t) => {
+  t.is(convenience.isNumberOrNan(0), true);
+  t.is(convenience.isNumberOrNan(42), true);
+  t.is(convenience.isNumberOrNan(-42), true);
+  t.is(convenience.isNumberOrNan(3.14), true);
+  t.is(convenience.isNumberOrNan(-3.14), true);
+  t.is(convenience.isNumberOrNan(Infinity), true);
+  t.is(convenience.isNumberOrNan(-Infinity), true);
+  t.is(convenience.isNumberOrNan(Number.MAX_SAFE_INTEGER), true);
+  t.is(convenience.isNumberOrNan(-Number.MAX_SAFE_INTEGER), true);
+  t.is(convenience.isNumberOrNan(NaN), true);
+  t.is(convenience.isNumberOrNan(BigInt(0)), false);
 });
 ```
-
-Full TypeScript (type inference) support.
 
 #### `isInteger`
 
@@ -260,8 +315,6 @@ test("isInteger", (t) => {
 });
 ```
 
-Full TypeScript (type inference) support.
-
 #### `isPositiveInteger`
 
 ```typescript
@@ -278,8 +331,6 @@ test("isPositiveInteger", (t) => {
   t.is(convenience.isPositiveInteger(NaN), false);
 });
 ```
-
-Full TypeScript (type inference) support.
 
 #### `isNonNegativeInteger`
 
@@ -298,8 +349,6 @@ test("isNonNegativeInteger", (t) => {
 });
 ```
 
-Full TypeScript (type inference) support.
-
 #### `isNegativeInteger`
 
 ```typescript
@@ -316,8 +365,6 @@ test("isNegativeInteger", (t) => {
   t.is(convenience.isNegativeInteger(NaN), false);
 });
 ```
-
-Full TypeScript (type inference) support.
 
 ## API Docs
 

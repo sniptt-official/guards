@@ -36,9 +36,9 @@ import { ... } from 'https://deno.land/x/guards/mod.ts'
 // TODO
 ```
 
-## 📝 Usage
+## Usage
 
-From <https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures>:
+### Foreword on JavaScript data types and data structures
 
 The latest ECMAScript standard defines nine types:
 
@@ -55,9 +55,21 @@ The latest ECMAScript standard defines nine types:
 - **Structural Root** Primitive
     -   `null`: `typeof instance === "object"`. Special primitive type having additional usage for it's value: if object is not inherited, then `null` is shown;
 
+Source: <https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures>
+
 ### Primitives
 
 #### `isBigInt`
+
+```typescript
+let val: bigint | number
+
+if (isBigInt(val)) {
+  // TypeScript will infer val: bigint
+} else {
+  // TypeScript will infer val: number
+}
+```
 
 #### `isBoolean`
 
@@ -73,11 +85,11 @@ if (isBoolean(val)) {
 
 #### `isNumber`
 
-**⚠️ NOTE:** Also answers `true` to `NaN`!
+**⚠️ NOTE:** Answers `false` to `NaN`
 
 See also:
 
--   [isValidNumber](#isvalidnumber)
+-   [isNumberOrNaN](#isnumberornan)
 -   [isInteger](#isinteger)
 
 ```typescript

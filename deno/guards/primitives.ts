@@ -9,16 +9,16 @@ export const isBoolean = <U>(term: boolean | U): term is boolean => {
 };
 
 export const isNumber = <U>(term: number | U): term is number => {
-  return typeof term === 'number';
+  return typeof term === 'number' && !Number.isNaN(term);
 };
 
 export const isString = <U>(term: string | U): term is string => {
   return typeof term === 'string';
 };
 
-// export const isBigInt = <U>(term: bigint | U): term is bigint => {
-//   return typeof term === "bigint";
-// };
+export const isBigInt = <U>(term: bigint | U): term is bigint => {
+  return typeof term === 'bigint';
+};
 
 export const isSymbol = <U>(term: symbol | U): term is symbol => {
   return typeof term === 'symbol';

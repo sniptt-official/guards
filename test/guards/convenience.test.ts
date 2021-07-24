@@ -2,6 +2,17 @@ import test from 'ava';
 
 import * as convenience from '../../lib/guards/convenience';
 
+test('isObjectOrNull', (t) => {
+  t.is(convenience.isObjectOrNull({}), true);
+  t.is(convenience.isObjectOrNull(null), true);
+  t.is(convenience.isObjectOrNull(new Set()), true);
+  t.is(
+    convenience.isObjectOrNull(() => {}),
+    false,
+  );
+  t.is(convenience.isObjectOrNull(new Function()), false);
+});
+
 test('isNonEmptyArray', (t) => {
   t.is(convenience.isNonEmptyArray([1, 2]), true);
   t.is(convenience.isNonEmptyArray([1]), true);
@@ -13,17 +24,18 @@ test('isNonEmptyString', (t) => {
   t.is(convenience.isNonEmptyString(''), false);
 });
 
-test('isValidNumber', (t) => {
-  t.is(convenience.isValidNumber(0), true);
-  t.is(convenience.isValidNumber(42), true);
-  t.is(convenience.isValidNumber(-42), true);
-  t.is(convenience.isValidNumber(3.14), true);
-  t.is(convenience.isValidNumber(-3.14), true);
-  t.is(convenience.isValidNumber(Infinity), true);
-  t.is(convenience.isValidNumber(-Infinity), true);
-  t.is(convenience.isValidNumber(Number.MAX_SAFE_INTEGER), true);
-  t.is(convenience.isValidNumber(-Number.MAX_SAFE_INTEGER), true);
-  t.is(convenience.isValidNumber(NaN), false);
+test('isNumberOrNan', (t) => {
+  t.is(convenience.isNumberOrNan(0), true);
+  t.is(convenience.isNumberOrNan(42), true);
+  t.is(convenience.isNumberOrNan(-42), true);
+  t.is(convenience.isNumberOrNan(3.14), true);
+  t.is(convenience.isNumberOrNan(-3.14), true);
+  t.is(convenience.isNumberOrNan(Infinity), true);
+  t.is(convenience.isNumberOrNan(-Infinity), true);
+  t.is(convenience.isNumberOrNan(Number.MAX_SAFE_INTEGER), true);
+  t.is(convenience.isNumberOrNan(-Number.MAX_SAFE_INTEGER), true);
+  t.is(convenience.isNumberOrNan(NaN), true);
+  t.is(convenience.isNumberOrNan(BigInt(0)), false);
 });
 
 test('isInteger', (t) => {

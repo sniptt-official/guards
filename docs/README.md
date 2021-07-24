@@ -7,6 +7,7 @@
 ### Functions
 
 - [isArray](README.md#isarray)
+- [isBigInt](README.md#isbigint)
 - [isBoolean](README.md#isboolean)
 - [isDate](README.md#isdate)
 - [isFunction](README.md#isfunction)
@@ -18,13 +19,14 @@
 - [isNonNegativeInteger](README.md#isnonnegativeinteger)
 - [isNull](README.md#isnull)
 - [isNumber](README.md#isnumber)
+- [isNumberOrNan](README.md#isnumberornan)
 - [isObject](README.md#isobject)
+- [isObjectOrNull](README.md#isobjectornull)
 - [isPositiveInteger](README.md#ispositiveinteger)
 - [isSet](README.md#isset)
 - [isString](README.md#isstring)
 - [isSymbol](README.md#issymbol)
 - [isUndefined](README.md#isundefined)
-- [isValidNumber](README.md#isvalidnumber)
 - [isWeakMap](README.md#isweakmap)
 - [isWeakSet](README.md#isweakset)
 
@@ -53,7 +55,33 @@ term is T[]
 
 #### Defined in
 
-guards/special.ts:17
+guards/structural.ts:17
+
+___
+
+### isBigInt
+
+▸ `Const` **isBigInt**<`U`\>(`term`): term is bigint
+
+#### Type parameters
+
+| Name |
+| :------ |
+| `U` |
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `term` | `bigint` \| `U` |
+
+#### Returns
+
+term is bigint
+
+#### Defined in
+
+[guards/primitives.ts:19](https://github.com/sniptt-official/guards/blob/f3c20b9/lib/guards/primitives.ts#L19)
 
 ___
 
@@ -79,7 +107,7 @@ term is boolean
 
 #### Defined in
 
-guards/primitives.ts:7
+[guards/primitives.ts:7](https://github.com/sniptt-official/guards/blob/f3c20b9/lib/guards/primitives.ts#L7)
 
 ___
 
@@ -105,7 +133,7 @@ term is Date
 
 #### Defined in
 
-guards/special.ts:41
+guards/structural.ts:41
 
 ___
 
@@ -132,7 +160,7 @@ term is T
 
 #### Defined in
 
-guards/special.ts:7
+guards/structural.ts:7
 
 ___
 
@@ -158,7 +186,7 @@ term is number
 
 #### Defined in
 
-guards/convenience.ts:16
+[guards/convenience.ts:20](https://github.com/sniptt-official/guards/blob/f3c20b9/lib/guards/convenience.ts#L20)
 
 ___
 
@@ -186,7 +214,7 @@ term is Map<K, V\>
 
 #### Defined in
 
-guards/special.ts:21
+guards/structural.ts:21
 
 ___
 
@@ -212,7 +240,7 @@ term is number
 
 #### Defined in
 
-guards/convenience.ts:28
+[guards/convenience.ts:32](https://github.com/sniptt-official/guards/blob/f3c20b9/lib/guards/convenience.ts#L32)
 
 ___
 
@@ -239,7 +267,7 @@ term is T[]
 
 #### Defined in
 
-guards/convenience.ts:4
+[guards/convenience.ts:8](https://github.com/sniptt-official/guards/blob/f3c20b9/lib/guards/convenience.ts#L8)
 
 ___
 
@@ -265,7 +293,7 @@ term is string
 
 #### Defined in
 
-guards/convenience.ts:8
+[guards/convenience.ts:12](https://github.com/sniptt-official/guards/blob/f3c20b9/lib/guards/convenience.ts#L12)
 
 ___
 
@@ -291,7 +319,7 @@ term is number
 
 #### Defined in
 
-guards/convenience.ts:24
+[guards/convenience.ts:28](https://github.com/sniptt-official/guards/blob/f3c20b9/lib/guards/convenience.ts#L28)
 
 ___
 
@@ -317,7 +345,7 @@ term is null
 
 #### Defined in
 
-guards/special.ts:3
+guards/structural.ts:3
 
 ___
 
@@ -343,7 +371,33 @@ term is number
 
 #### Defined in
 
-guards/primitives.ts:11
+[guards/primitives.ts:11](https://github.com/sniptt-official/guards/blob/f3c20b9/lib/guards/primitives.ts#L11)
+
+___
+
+### isNumberOrNan
+
+▸ `Const` **isNumberOrNan**<`U`\>(`term`): term is number
+
+#### Type parameters
+
+| Name |
+| :------ |
+| `U` |
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `term` | `number` \| `U` |
+
+#### Returns
+
+term is number
+
+#### Defined in
+
+[guards/convenience.ts:16](https://github.com/sniptt-official/guards/blob/f3c20b9/lib/guards/convenience.ts#L16)
 
 ___
 
@@ -370,7 +424,34 @@ term is NonNullable<T\>
 
 #### Defined in
 
-guards/special.ts:11
+guards/structural.ts:11
+
+___
+
+### isObjectOrNull
+
+▸ `Const` **isObjectOrNull**<`T`, `U`\>(`term`): term is T
+
+#### Type parameters
+
+| Name | Type |
+| :------ | :------ |
+| `T` | extends `object` |
+| `U` | `U` |
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `term` | `T` \| `U` |
+
+#### Returns
+
+term is T
+
+#### Defined in
+
+[guards/convenience.ts:4](https://github.com/sniptt-official/guards/blob/f3c20b9/lib/guards/convenience.ts#L4)
 
 ___
 
@@ -396,7 +477,7 @@ term is number
 
 #### Defined in
 
-guards/convenience.ts:20
+[guards/convenience.ts:24](https://github.com/sniptt-official/guards/blob/f3c20b9/lib/guards/convenience.ts#L24)
 
 ___
 
@@ -423,7 +504,7 @@ term is Set<T\>
 
 #### Defined in
 
-guards/special.ts:25
+guards/structural.ts:25
 
 ___
 
@@ -449,7 +530,7 @@ term is string
 
 #### Defined in
 
-guards/primitives.ts:15
+[guards/primitives.ts:15](https://github.com/sniptt-official/guards/blob/f3c20b9/lib/guards/primitives.ts#L15)
 
 ___
 
@@ -475,7 +556,7 @@ term is symbol
 
 #### Defined in
 
-guards/primitives.ts:23
+[guards/primitives.ts:23](https://github.com/sniptt-official/guards/blob/f3c20b9/lib/guards/primitives.ts#L23)
 
 ___
 
@@ -501,33 +582,7 @@ term is undefined
 
 #### Defined in
 
-guards/primitives.ts:3
-
-___
-
-### isValidNumber
-
-▸ `Const` **isValidNumber**<`U`\>(`term`): term is number
-
-#### Type parameters
-
-| Name |
-| :------ |
-| `U` |
-
-#### Parameters
-
-| Name | Type |
-| :------ | :------ |
-| `term` | `number` \| `U` |
-
-#### Returns
-
-term is number
-
-#### Defined in
-
-guards/convenience.ts:12
+[guards/primitives.ts:3](https://github.com/sniptt-official/guards/blob/f3c20b9/lib/guards/primitives.ts#L3)
 
 ___
 
@@ -555,7 +610,7 @@ term is WeakMap<K, V\>
 
 #### Defined in
 
-guards/special.ts:29
+guards/structural.ts:29
 
 ___
 
@@ -582,4 +637,4 @@ term is WeakSet<T\>
 
 #### Defined in
 
-guards/special.ts:35
+guards/structural.ts:35
