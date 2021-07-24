@@ -59,9 +59,9 @@ The latest ECMAScript standard defines nine types:
 
 Source: <https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures>
 
-### Correct type coercion
+### Type coercion
 
-![Type safety for chained ops](.github/assets/type-safety-chained-operations.png)
+![Type coercion example](.github/assets/type-coercion.png)
 
 ### Primitives
 
@@ -76,7 +76,7 @@ primitives.isNumber(val);
 or
 
 ```typescript
-import { isNumber } from '@sniptt/guards/primitives';
+import { isNumber } from '@sniptt/guards';
 
 isNumber(val);
 ```
@@ -84,7 +84,7 @@ isNumber(val);
 #### `isBigInt`
 
 ```typescript
-import { isBigInt } from '@sniptt/guards/primitives';
+import { isBigInt } from '@sniptt/guards';
 
 let val: bigint | number;
 
@@ -98,7 +98,7 @@ if (isBigInt(val)) {
 #### `isBoolean`
 
 ```typescript
-import { isBoolean } from '@sniptt/guards/primitives';
+import { isBoolean } from '@sniptt/guards';
 
 let val: boolean | number;
 
@@ -120,7 +120,7 @@ See also:
 *   [isBigInt](#isbigint)
 
 ```typescript
-import { isNumber } from '@sniptt/guards/primitives';
+import { isNumber } from '@sniptt/guards';
 
 let val: number | string;
 
@@ -134,7 +134,7 @@ if (isNumber(val)) {
 #### `isString`
 
 ```typescript
-import { isString } from '@sniptt/guards/primitives';
+import { isString } from '@sniptt/guards';
 
 let val: string | number;
 
@@ -148,7 +148,7 @@ if (isString(val)) {
 #### `isSymbol`
 
 ```typescript
-import { isSymbol } from '@sniptt/guards/primitives';
+import { isSymbol } from '@sniptt/guards';
 
 let val: symbol | string;
 
@@ -162,7 +162,7 @@ if (isSymbol(val)) {
 #### `isUndefined`
 
 ```typescript
-import { isUndefined } from '@sniptt/guards/primitives';
+import { isUndefined } from '@sniptt/guards';
 
 let val: undefined | null;
 
@@ -186,7 +186,7 @@ structural.isMap(val);
 or
 
 ```typescript
-import { isMap } from '@sniptt/guards/structural';
+import { isMap } from '@sniptt/guards';
 
 isMap(val);
 ```
@@ -252,7 +252,7 @@ convenience.isNonEmptyArray(val);
 or
 
 ```typescript
-import { isNonEmptyArray } from '@sniptt/guards/convenience';
+import { isNonEmptyArray } from '@sniptt/guards';
 
 isNonEmptyArray(val);
 ```

@@ -37,7 +37,7 @@ term is bigint
 
 #### Defined in
 
-[guards/primitives.ts:19](https://github.com/sniptt-official/guards/blob/f2013e7/lib/guards/primitives.ts#L19)
+[guards/primitives.ts:19](https://github.com/sniptt-official/guards/blob/799f812/lib/guards/primitives.ts#L19)
 
 ___
 
@@ -63,7 +63,7 @@ term is boolean
 
 #### Defined in
 
-[guards/primitives.ts:7](https://github.com/sniptt-official/guards/blob/f2013e7/lib/guards/primitives.ts#L7)
+[guards/primitives.ts:7](https://github.com/sniptt-official/guards/blob/799f812/lib/guards/primitives.ts#L7)
 
 ___
 
@@ -89,7 +89,7 @@ term is number
 
 #### Defined in
 
-[guards/primitives.ts:11](https://github.com/sniptt-official/guards/blob/f2013e7/lib/guards/primitives.ts#L11)
+[guards/primitives.ts:11](https://github.com/sniptt-official/guards/blob/799f812/lib/guards/primitives.ts#L11)
 
 ___
 
@@ -115,7 +115,7 @@ term is string
 
 #### Defined in
 
-[guards/primitives.ts:15](https://github.com/sniptt-official/guards/blob/f2013e7/lib/guards/primitives.ts#L15)
+[guards/primitives.ts:15](https://github.com/sniptt-official/guards/blob/799f812/lib/guards/primitives.ts#L15)
 
 ___
 
@@ -141,7 +141,7 @@ term is symbol
 
 #### Defined in
 
-[guards/primitives.ts:23](https://github.com/sniptt-official/guards/blob/f2013e7/lib/guards/primitives.ts#L23)
+[guards/primitives.ts:23](https://github.com/sniptt-official/guards/blob/799f812/lib/guards/primitives.ts#L23)
 
 ___
 
@@ -167,4 +167,4 @@ term is undefined
 
 #### Defined in
 
-[guards/primitives.ts:3](https://github.com/sniptt-official/guards/blob/f2013e7/lib/guards/primitives.ts#L3)
+[guards/primitives.ts:3](https://github.com/sniptt-official/guards/blob/799f812/lib/guards/primitives.ts#L3)
