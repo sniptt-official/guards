@@ -17,7 +17,7 @@
 </p>
 
 <p align="center">
-  0 dependencies 💪🏽
+  <b>Zero dependencies</b> 💪
 </p>
 
 ***
