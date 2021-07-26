@@ -24,18 +24,18 @@ test('isNonEmptyString', (t) => {
   t.is(convenience.isNonEmptyString(''), false);
 });
 
-test('isNumberOrNan', (t) => {
-  t.is(convenience.isNumberOrNan(0), true);
-  t.is(convenience.isNumberOrNan(42), true);
-  t.is(convenience.isNumberOrNan(-42), true);
-  t.is(convenience.isNumberOrNan(3.14), true);
-  t.is(convenience.isNumberOrNan(-3.14), true);
-  t.is(convenience.isNumberOrNan(Infinity), true);
-  t.is(convenience.isNumberOrNan(-Infinity), true);
-  t.is(convenience.isNumberOrNan(Number.MAX_SAFE_INTEGER), true);
-  t.is(convenience.isNumberOrNan(-Number.MAX_SAFE_INTEGER), true);
-  t.is(convenience.isNumberOrNan(NaN), true);
-  t.is(convenience.isNumberOrNan(BigInt(0)), false);
+test('isNumberOrNaN', (t) => {
+  t.is(convenience.isNumberOrNaN(0), true);
+  t.is(convenience.isNumberOrNaN(42), true);
+  t.is(convenience.isNumberOrNaN(-42), true);
+  t.is(convenience.isNumberOrNaN(3.14), true);
+  t.is(convenience.isNumberOrNaN(-3.14), true);
+  t.is(convenience.isNumberOrNaN(Infinity), true);
+  t.is(convenience.isNumberOrNaN(-Infinity), true);
+  t.is(convenience.isNumberOrNaN(Number.MAX_SAFE_INTEGER), true);
+  t.is(convenience.isNumberOrNaN(-Number.MAX_SAFE_INTEGER), true);
+  t.is(convenience.isNumberOrNaN(NaN), true);
+  t.is(convenience.isNumberOrNaN(BigInt(0)), false);
 });
 
 test('isInteger', (t) => {
