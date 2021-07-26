@@ -11,7 +11,7 @@
 - [isNonEmptyArray](convenience.md#isnonemptyarray)
 - [isNonEmptyString](convenience.md#isnonemptystring)
 - [isNonNegativeInteger](convenience.md#isnonnegativeinteger)
-- [isNumberOrNan](convenience.md#isnumberornan)
+- [isNumberOrNaN](convenience.md#isnumberornan)
 - [isObjectOrNull](convenience.md#isobjectornull)
 - [isPositiveInteger](convenience.md#ispositiveinteger)
 
@@ -39,7 +39,7 @@ term is number
 
 #### Defined in
 
-[guards/convenience.ts:20](https://github.com/sniptt-official/guards/blob/799f812/lib/guards/convenience.ts#L20)
+[guards/convenience.ts:20](https://github.com/sniptt-official/guards/blob/afc9150/lib/guards/convenience.ts#L20)
 
 ___
 
@@ -65,7 +65,7 @@ term is number
 
 #### Defined in
 
-[guards/convenience.ts:32](https://github.com/sniptt-official/guards/blob/799f812/lib/guards/convenience.ts#L32)
+[guards/convenience.ts:32](https://github.com/sniptt-official/guards/blob/afc9150/lib/guards/convenience.ts#L32)
 
 ___
 
@@ -92,7 +92,7 @@ term is T[]
 
 #### Defined in
 
-[guards/convenience.ts:8](https://github.com/sniptt-official/guards/blob/799f812/lib/guards/convenience.ts#L8)
+[guards/convenience.ts:8](https://github.com/sniptt-official/guards/blob/afc9150/lib/guards/convenience.ts#L8)
 
 ___
 
@@ -118,7 +118,7 @@ term is string
 
 #### Defined in
 
-[guards/convenience.ts:12](https://github.com/sniptt-official/guards/blob/799f812/lib/guards/convenience.ts#L12)
+[guards/convenience.ts:12](https://github.com/sniptt-official/guards/blob/afc9150/lib/guards/convenience.ts#L12)
 
 ___
 
@@ -144,13 +144,13 @@ term is number
 
 #### Defined in
 
-[guards/convenience.ts:28](https://github.com/sniptt-official/guards/blob/799f812/lib/guards/convenience.ts#L28)
+[guards/convenience.ts:28](https://github.com/sniptt-official/guards/blob/afc9150/lib/guards/convenience.ts#L28)
 
 ___
 
-### isNumberOrNan
+### isNumberOrNaN
 
-▸ `Const` **isNumberOrNan**<`U`\>(`term`): term is number
+▸ `Const` **isNumberOrNaN**<`U`\>(`term`): term is number
 
 #### Type parameters
 
@@ -170,7 +170,7 @@ term is number
 
 #### Defined in
 
-[guards/convenience.ts:16](https://github.com/sniptt-official/guards/blob/799f812/lib/guards/convenience.ts#L16)
+[guards/convenience.ts:16](https://github.com/sniptt-official/guards/blob/afc9150/lib/guards/convenience.ts#L16)
 
 ___
 
@@ -197,7 +197,7 @@ term is T
 
 #### Defined in
 
-[guards/convenience.ts:4](https://github.com/sniptt-official/guards/blob/799f812/lib/guards/convenience.ts#L4)
+[guards/convenience.ts:4](https://github.com/sniptt-official/guards/blob/afc9150/lib/guards/convenience.ts#L4)
 
 ___
 
@@ -223,4 +223,4 @@ term is number
 
 #### Defined in
 
-[guards/convenience.ts:24](https://github.com/sniptt-official/guards/blob/799f812/lib/guards/convenience.ts#L24)
+[guards/convenience.ts:24](https://github.com/sniptt-official/guards/blob/afc9150/lib/guards/convenience.ts#L24)

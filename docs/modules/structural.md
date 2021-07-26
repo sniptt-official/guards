@@ -41,7 +41,7 @@ term is T[]
 
 #### Defined in
 
-[guards/structural.ts:17](https://github.com/sniptt-official/guards/blob/799f812/lib/guards/structural.ts#L17)
+[guards/structural.ts:17](https://github.com/sniptt-official/guards/blob/afc9150/lib/guards/structural.ts#L17)
 
 ___
 
@@ -67,7 +67,7 @@ term is Date
 
 #### Defined in
 
-[guards/structural.ts:41](https://github.com/sniptt-official/guards/blob/799f812/lib/guards/structural.ts#L41)
+[guards/structural.ts:41](https://github.com/sniptt-official/guards/blob/afc9150/lib/guards/structural.ts#L41)
 
 ___
 
@@ -94,7 +94,7 @@ term is T
 
 #### Defined in
 
-[guards/structural.ts:7](https://github.com/sniptt-official/guards/blob/799f812/lib/guards/structural.ts#L7)
+[guards/structural.ts:7](https://github.com/sniptt-official/guards/blob/afc9150/lib/guards/structural.ts#L7)
 
 ___
 
@@ -122,7 +122,7 @@ term is Map<K, V\>
 
 #### Defined in
 
-[guards/structural.ts:21](https://github.com/sniptt-official/guards/blob/799f812/lib/guards/structural.ts#L21)
+[guards/structural.ts:21](https://github.com/sniptt-official/guards/blob/afc9150/lib/guards/structural.ts#L21)
 
 ___
 
@@ -148,7 +148,7 @@ term is null
 
 #### Defined in
 
-[guards/structural.ts:3](https://github.com/sniptt-official/guards/blob/799f812/lib/guards/structural.ts#L3)
+[guards/structural.ts:3](https://github.com/sniptt-official/guards/blob/afc9150/lib/guards/structural.ts#L3)
 
 ___
 
@@ -175,7 +175,7 @@ term is NonNullable<T\>
 
 #### Defined in
 
-[guards/structural.ts:11](https://github.com/sniptt-official/guards/blob/799f812/lib/guards/structural.ts#L11)
+[guards/structural.ts:11](https://github.com/sniptt-official/guards/blob/afc9150/lib/guards/structural.ts#L11)
 
 ___
 
@@ -202,7 +202,7 @@ term is Set<T\>
 
 #### Defined in
 
-[guards/structural.ts:25](https://github.com/sniptt-official/guards/blob/799f812/lib/guards/structural.ts#L25)
+[guards/structural.ts:25](https://github.com/sniptt-official/guards/blob/afc9150/lib/guards/structural.ts#L25)
 
 ___
 
@@ -230,7 +230,7 @@ term is WeakMap<K, V\>
 
 #### Defined in
 
-[guards/structural.ts:29](https://github.com/sniptt-official/guards/blob/799f812/lib/guards/structural.ts#L29)
+[guards/structural.ts:29](https://github.com/sniptt-official/guards/blob/afc9150/lib/guards/structural.ts#L29)
 
 ___
 
@@ -257,4 +257,4 @@ term is WeakSet<T\>
 
 #### Defined in
 
-[guards/structural.ts:35](https://github.com/sniptt-official/guards/blob/799f812/lib/guards/structural.ts#L35)
+[guards/structural.ts:35](https://github.com/sniptt-official/guards/blob/afc9150/lib/guards/structural.ts#L35)

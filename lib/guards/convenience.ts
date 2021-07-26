@@ -13,7 +13,7 @@ export const isNonEmptyString = <U>(term: string | U): term is string => {
   return isString(term) && term.length > 0;
 };
 
-export const isNumberOrNan = <U>(term: number | U): term is number => {
+export const isNumberOrNaN = <U>(term: number | U): term is number => {
   return typeof term === 'number';
 };
 
